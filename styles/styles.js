@@ -32,4 +32,28 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-around',
         flexDirection: 'row',
     },
+    listItem:
+    {
+
+    },
+    listTimestamp: 
+    {
+        width: '100%',
+        borderTopStartRadius: 10,
+        borderTopEndRadius: 10,
+        backgroundColor: '#c0c0c2',
+        flexDirection: "row",
+        justifyContent: "space-around",
+        gap: 10,
+        padding: 5,
+        marginTop: 15,
+    },
+    listItemBody:
+    {
+        width: '100%',
+        borderBottomEndRadius: 10,
+        borderBottomStartRadius: 10,
+        backgroundColor: '#e1e1e1',
+        padding: 10,
+    }
 })

@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, ScrollView } from 'react-native';
+import { View, Text, TextInput, Button, ScrollView, } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React, { useState } from 'react';
 import { styles } from '../styles/styles';
