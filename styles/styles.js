@@ -27,9 +27,13 @@ export const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 20,
     },
+    text:
+    {
+        width: '80%',
+    },
     errorArea:
     {
-        marginTop: 100,
+        marginTop: 20,
     },
     errorMsg:
     {

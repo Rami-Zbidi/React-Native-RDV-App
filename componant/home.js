@@ -61,12 +61,13 @@ export default function Login ({navigation})
                 <View style={styles.inputArea}>
                 <Icon name="lock" size={20} color="#7e7e7e" style={{ marginRight: 10 }} />
                     <TextInput
+                    style={styles.text}
                     placeholder="Enter your password"
                     secureTextEntry={!showPassword}
                     onChangeText={(text) => setPassword(text)}
                     value={password}/>
                     <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.toggleButton}>
-                        <Icon name={showPassword ? 'visibility' : 'visibility-off'} size={20} color="#7e7e7e" style={{marginLeft: 150, }} />
+                        <Icon name={showPassword ? 'visibility' : 'visibility-off'} size={20} color="#7e7e7e" style={{marginLeft: 10, }} />
                     </TouchableOpacity>
                 </View>
             </View>
