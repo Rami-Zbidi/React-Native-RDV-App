@@ -27,6 +27,20 @@ export const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 20,
     },
+    errorArea:
+    {
+        marginTop: 100,
+    },
+    errorMsg:
+    {
+        alignSelf: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        backgroundColor: '#FF9494',
+        color: 'white',
+        padding: 10,
+        margin: 10,
+    },
     button:
     {
         justifyContent: 'space-around',

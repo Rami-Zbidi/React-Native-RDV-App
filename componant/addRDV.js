@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import React, { useState } from 'react';
 import { styles } from '../styles/styles';
 
+// On this page the user will enter the data about the appointment
 export default function AddRDV ()
 {
 
