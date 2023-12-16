@@ -46,6 +46,11 @@ export default function Login ({navigation})
             <Text style={styles.header}>Login</Text>
 
             <View>
+                {emailInvalid && <Text style={styles.errorMsg} >Wrong Email</Text>}
+                {passwordInvalid && <Text style={styles.errorMsg} >The password should be longer than 5 characters</Text>}
+            </View>
+
+            <View>
                 <Text style={styles.label}>Email</Text>
                 <View style={styles.inputArea}>
                     <Icon name="email" size={20} color="#7e7e7e" style={{ marginRight: 10 }} />
@@ -77,11 +82,6 @@ export default function Login ({navigation})
                 color='#9955bb'
                 onPress={ loginOP }
                 title="Login"/>
-            </View>
-
-            <View style={styles.errorArea} >
-                {emailInvalid && <Text style={styles.errorMsg} >Wrong Email</Text>}
-                {passwordInvalid && <Text style={styles.errorMsg} >The password should be longer than 5 characters</Text>}
             </View>
         </View>
     );

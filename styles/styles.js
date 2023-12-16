@@ -31,10 +31,6 @@ export const styles = StyleSheet.create({
     {
         width: '80%',
     },
-    errorArea:
-    {
-        marginTop: 20,
-    },
     errorMsg:
     {
         alignSelf: 'center',
