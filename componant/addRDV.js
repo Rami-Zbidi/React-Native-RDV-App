@@ -4,25 +4,24 @@ import React, { useState } from 'react';
 import { styles } from '../styles/styles';
 
 // On this page the user will enter the data about the appointment
-export default function AddRDV ()
+export default function AddRDV ({ navigation, addAppointment })
 {
-    const validHourRegex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
+    const validtimeRegex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
     const validDateRegex = /^(31\/(01|03|05|07|08|10|12)\/\d{4}|(0[1-9]|1[0-9]|2[0-8])\/(0[1-9]|1[0-2])\/\d{4}|29\/02\/\d{4}([02468][048]|[13579][26])|(0[1-9]|1[0-9]|2[0-9])\/(0[13-9]|1[0-2])\/\d{4}|30\/(01|03|04|05|06|07|08|09|10|11|12)\/\d{4})$/;
-    ;
     const [date, setDate] = useState('');
     const [dateInvalid, setDateInvalid] = useState(false);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [hour, setHour] = useState('');
-    const [hourInvalid, setHourInvalid] = useState(false);
+    const [time, settime] = useState('');
+    const [timeInvalid, settimeInvalid] = useState(false);
 
     const resetFields = () =>
     {
         setDate('');
         setTitle('');
         setContent('');
-        setHour('');
-        setHourInvalid(false);
+        settime('');
+        settimeInvalid(false);
         setDateInvalid(false);
     }
 
@@ -34,18 +33,25 @@ export default function AddRDV ()
             return
         }
 
-        if (!hour.match(validHourRegex))
+        if (!time.match(validtimeRegex))
         {
-            setHourInvalid(true);
+            settimeInvalid(true);
             return
         }
 
-        setDate('');
-        setTitle('');
-        setContent('');
-        setHour('');
-        setHourInvalid(false);
-        setDateInvalid(false);
+        // TODO: adding a new appointment
+        addAppointment({
+            id: Date.now(),
+            appointment: {
+                date,
+                title,
+                content,
+                time,
+            },
+        });
+
+        resetFields();
+        navigation.goBack();
     }
 
     return (
@@ -55,7 +61,7 @@ export default function AddRDV ()
 
                 {/*The error messages view*/}
                 <View>
-                    {hourInvalid && <Text style={styles.errorMsg} >Correct the entered hour</Text>}
+                    {timeInvalid && <Text style={styles.errorMsg} >Correct the entered time</Text>}
                     {dateInvalid && <Text style={styles.errorMsg} >Correct the entered date</Text>}
                 </View>
 
@@ -95,15 +101,15 @@ export default function AddRDV ()
                     </View>
                 </View>
 
-                {/*The hour input field*/}
+                {/*The time input field*/}
                 <View>
-                    <Text style={styles.label}>Hour</Text>
+                    <Text style={styles.label}>time</Text>
                     <View style={styles.inputArea}>
                         <Icon name="access-time" size={20} color="#7e7e7e" style={{ marginRight: 10 }} />
                         <TextInput
-                        placeholder="Enter the hour as 00:00"
-                        onChangeText={(text) => setHour(text)}
-                        value={hour}/>
+                        placeholder="Enter the time as 00:00"
+                        onChangeText={(text) => settime(text)}
+                        value={time}/>
                     </View>
                 </View>
 
