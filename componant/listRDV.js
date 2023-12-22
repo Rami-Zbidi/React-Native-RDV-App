@@ -19,7 +19,7 @@ export default function ListRDV ({ navigation, DATA })
             <FlatList
             data={DATA}
             renderItem={({item}) =>
-                <AppointmentItem appointment={item.appointment}/>
+                <AppointmentItem item={item}/>
             }
             />
         </View>

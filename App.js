@@ -22,6 +22,7 @@ export default function App() {
   ]);
 
   const addAppointment = (newAppointment) => {
+    newAppointment.id = appointments.length + 1;
     setAppointments((Appointments) => [...Appointments, newAppointment])
   }
 

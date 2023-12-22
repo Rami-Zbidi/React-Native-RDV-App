@@ -39,9 +39,7 @@ export default function AddRDV ({ navigation, addAppointment })
             return
         }
 
-        // TODO: adding a new appointment
         addAppointment({
-            id: Date.now(),
             appointment: {
                 date,
                 title,
